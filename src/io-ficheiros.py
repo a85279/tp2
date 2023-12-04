@@ -54,3 +54,13 @@ def guarda_as_listas_em_ficheiros(lista_de_veiculos, lista_de_clientes, lista_de
         guarda_em_ficheiro(nome_ficheiro_lista_de_faturas, lista_de_faturas)
     else:
         print("Gravação cancelada...")
+
+def le_de_ficheiro(nome_ficheiro):
+    """Lê os dados de um ficheiro
+
+    :param nome_ficheiro: nome do ficheiro onde estao os dados
+    :return: o que leu do ficheiro (depende dos dados guardados)
+    """
+
+    with open(nome_ficheiro, "rb") as f:
+        return pickle.load(f)
